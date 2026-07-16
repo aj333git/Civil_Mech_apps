@@ -328,106 +328,51 @@ After this project, you should be able to
 
 ---
 
-# Practice Questions
 
-## Numerical 1 (Array Traversal)
-
-A beam has the following point loads
-
-| Load | Value (kN) |
-|------|-----------:|
-| P₁ | 8 |
-| P₂ | 12 |
-| P₃ | 15 |
-| P₄ | 10 |
-| P₅ | 5 |
-| P₆ | 20 |
-
-Write the contents of the running total after every iteration.
 
 ---
 
-## Numerical 2 (Time Complexity)
+(GATE CSE Style)Problem Statement:
+Question 1: Time and Space Complexity 
+Consider the following C++ function that calculates a cumulative structural summary from an input vector of size n:
 
-A beam contains
+std::vector<double> computeCumulativeLoads(const std::vector<double>& loads) {
+    int n = loads.size();
+    std::vector<double> cumLoads(n); 
+    double runningSum = 0.0;
 
-```
-n = 2,500
-```
+    for (int i = 0; i < n; ++i) {
+        runningSum += loads[i];
+        cumLoads[i] = runningSum;
+    }
+    return cumLoads;
+}
 
-point loads.
+Let T(n) be the worst-case time complexity and S(n) be the auxiliary space complexity (extra space used excluding the input space). Which of the following is correct?
 
-The algorithm traverses the vector exactly once.
+(A) T(n) = O(n) and S(n) = O(1)
 
-Answer the following.
+(B) T(n) = O(n) and S(n) = O(n)
 
-1. Number of loop iterations?
+(C) T(n) = O(n²) and S(n) = O(n)
 
-2. Time Complexity?
+(D) T(n) = O(n²) and S(n) = O(1)
 
-3. If the number of point loads doubles, how many iterations will the algorithm execute?
 
----
 
-# GATE CSE Style MCQ 1
 
-Consider the following function
+Question 2: Dynamic Memory & Vectors (GATE CSE Style)
+Problem Statement:
+A std::vector in C++ manages a dynamically allocated contiguous array. When its capacity is full and a new element is added, it reallocates memory by doubling its current capacity and copies the existing elements to the new memory location.
 
-```cpp
-std::vector<double> computeCumulativeLoads(
-const std::vector<double>& loads)
-```
 
-which stores cumulative loads in another vector.
+Suppose an empty vector has an initial capacity of 1. We insert n structural loads sequentially using push_back(), where n = 2^k + 1 (for some integer k>= 1). What is the total number of element copy operations performed during memory reallocations to insert all n elements?
 
-Its worst-case
-
-- Time Complexity
-- Auxiliary Space
-
-are
-
-```
-(A) O(n), O(1)
-
-(B) O(n), O(n)
-
-(C) O(n²), O(n)
-
-(D) O(n²), O(1)
-```
-
----
-
-# GATE CSE Style MCQ 2
-
-A `std::vector` starts with capacity 1.
-
-Whenever it becomes full, its capacity doubles.
-
-Suppose
-
-```
-n = 2ᵏ + 1
-```
-
-loads are inserted using
-
-```cpp
-push_back()
-```
-
-What is the total number of element-copy operations during reallocations?
-
-```
 (A) n
+(B) 2n - 3
+C) n log₂n
+(D) n - 2
 
-(B) 2n − 3
-
-(C) n log₂ n
-
-(D) n − 2
-```
 
 ---
 

@@ -135,141 +135,13 @@ Print the total load.
 
 ---
 
-# Dry Run
+# Time and Space Complexity Explained
 
-Input
+## Time Complexity: O(n)
 
-```
-n = 5
-```
+Think of the array as a row of boxes.
 
-Loads
-
-```
-10
-20
-15
-25
-30
-```
-
-Execution
-
-| Iteration | Current Load | Running Total |
-|-----------|-------------:|--------------:|
-| 1 | 10 | 10 |
-| 2 | 20 | 30 |
-| 3 | 15 | 45 |
-| 4 | 25 | 70 |
-| 5 | 30 | 100 |
-
-Output
-
-```
-Total Load = 100 kN
-```
-
----
-
-# Time Complexity
-
-Suppose
-
-```
-n = Number of point loads
-```
-
-If
-
-```
-n = 5
-```
-
-the loop executes
-
-```
-5
-```
-
-times.
-
-If
-
-```
-n = 100
-```
-
-the loop executes
-
-```
-100
-```
-
-times.
-
-If
-
-```
-n = 10,000
-```
-
-the loop executes
-
-```
-10,000
-```
-
-times.
-
-Therefore,
-
-```
-Time Complexity = O(n)
-```
-
-because every load is visited exactly once.
-
----
-
-# Space Complexity
-
-The program stores
-
-```
-n
-```
-
-loads inside
-
-```cpp
-std::vector<double>
-```
-
-Hence,
-
-```
-Space Complexity = O(n)
-```
-
----
-
-# Auxiliary Space
-
-Additional variables are
-
-```cpp
-double total;
-int i;
-```
-
-Their size never depends on `n`.
-
-Hence
-
-```
-Auxiliary Space = O(1)
-```
-
+**Example**
 ---
 
 # Why use std::vector?
@@ -288,16 +160,6 @@ For DSA, it behaves like an array.
 
 ---
 
-# Civil Engineering Interpretation
-
-| Programming | Civil Engineering |
-|--------------|------------------|
-| Vector | Point loads on a beam |
-| Array Index | Position of load |
-| Traversal | Inspect every load |
-| Summation | Compute total load |
-| Function | Engineering calculation |
-| Report | Structural summary |
 
 ---
 
@@ -406,21 +268,7 @@ Iterations = 5000
 
 ---
 
-## MCQ Answers
 
-```
-Question 1
-
-Answer : (B)
-```
-
-```
-Question 2
-
-Answer : (B)
-```
-
----
 
 # Key Takeaways
 

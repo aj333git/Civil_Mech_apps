@@ -332,47 +332,46 @@ After this project, you should be able to
 
 ---
 
-(GATE CSE Style)Problem Statement:
-Question 1: Time and Space Complexity 
-Consider the following C++ function that calculates a cumulative structural summary from an input vector of size n:
+## Question 1: Time and Space Complexity (GATE CSE Style)
 
+**Problem Statement:**
+
+Consider the following C++ function that calculates a cumulative structural summary from an input vector of size `n`:
+
+```cpp
 std::vector<double> computeCumulativeLoads(const std::vector<double>& loads) {
     int n = loads.size();
     std::vector<double> cumLoads(n); 
     double runningSum = 0.0;
-
     for (int i = 0; i < n; ++i) {
         runningSum += loads[i];
         cumLoads[i] = runningSum;
     }
     return cumLoads;
 }
+```
 
-Let T(n) be the worst-case time complexity and S(n) be the auxiliary space complexity (extra space used excluding the input space). Which of the following is correct?
+Let `T(n)` be the worst-case time complexity and `S(n)` be the auxiliary space complexity (extra space used excluding the input space). Which of the following is correct?
 
-(A) T(n) = O(n) and S(n) = O(1)
+- **(A)** T(n) = O(n) and S(n) = O(1)
+- **(B)** T(n) = O(n) and S(n) = O(n)
+- **(C)** T(n) = O(n²) and S(n) = O(n)
+- **(D)** T(n) = O(n²) and S(n) = O(1)
 
-(B) T(n) = O(n) and S(n) = O(n)
+---
 
-(C) T(n) = O(n²) and S(n) = O(n)
+## Question 2: Dynamic Memory & Vectors (GATE CSE Style)
 
-(D) T(n) = O(n²) and S(n) = O(1)
+**Problem Statement:**
 
+A `std::vector` in C++ manages a dynamically allocated contiguous array. When its capacity is full and a new element is added, it reallocates memory by doubling its current capacity and copies the existing elements to the new memory location.
 
+Suppose an empty vector has an initial capacity of `1`. We insert `n` structural loads sequentially using `push_back()`, where `n = 2^k + 1` (for some integer `k ≥ 1`). What is the total number of element copy operations performed during memory reallocations to insert all `n` elements?
 
-
-Question 2: Dynamic Memory & Vectors (GATE CSE Style)
-Problem Statement:
-A std::vector in C++ manages a dynamically allocated contiguous array. When its capacity is full and a new element is added, it reallocates memory by doubling its current capacity and copies the existing elements to the new memory location.
-
-
-Suppose an empty vector has an initial capacity of 1. We insert n structural loads sequentially using push_back(), where n = 2^k + 1 (for some integer k>= 1). What is the total number of element copy operations performed during memory reallocations to insert all n elements?
-
-(A) n
-(B) 2n - 3
-C) n log₂n
-(D) n - 2
-
+- **(A)** n
+- **(B)** 2n - 3
+- **(C)** n log₂n
+- **(D)** n - 2
 
 ---
 

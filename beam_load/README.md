@@ -144,20 +144,211 @@ Think of the array as a row of boxes.
 **Example**
 ---
 
-# Why use std::vector?
+# Time and Space Complexity Explained
 
-Compared to a traditional array,
+## Time Complexity: O(n)
 
-`std::vector`
+Think of the array as a row of boxes.
 
-- allocates memory dynamically
-- grows automatically
-- manages memory safely
-- supports STL algorithms
-- provides constant-time indexing
+**Example**
 
-For DSA, it behaves like an array.
+```
++----+----+----+----+----+
+| 10 | 20 | 15 | 25 | 30 |
++----+----+----+----+----+
+```
 
+To calculate the total load, the program must open every box exactly once.
+
+| Step | Action  | Total |
+|------|---------|-------|
+| 1    | Read 10 | 10    |
+| 2    | Read 20 | 30    |
+| 3    | Read 15 | 45    |
+| 4    | Read 25 | 70    |
+| 5    | Read 30 | 100   |
+
+The program cannot skip any box because every load contributes to the final answer.
+
+| Number of loads | Iterations |
+|------------------|------------|
+| 5                | 5          |
+| 100              | 100        |
+| 1,000            | 1,000      |
+| n                | n          |
+
+The amount of work grows directly with the number of loads.
+
+> **Time Complexity = O(n)**
+
+---
+
+## Space Complexity: O(n)
+
+Before the program can calculate the total load, it must first store all the loads entered by the user.
+
+**Example**
+
+User enters:
+```
+10
+20
+15
+25
+30
+```
+
+The vector stores them in memory:
+
+```
++----+----+----+----+----+
+| 10 | 20 | 15 | 25 | 30 |
++----+----+----+----+----+
+```
+
+| Loads entered | Numbers stored |
+|----------------|-----------------|
+| 100            | 100             |
+| 10,000         | 10,000          |
+
+As the number of loads increases, the memory required by the vector increases proportionally.
+
+> **Space Complexity = O(n)**
+
+---
+
+## What About the Variable `total`?
+
+The program also creates:
+
+```cpp
+double total = 0.0;
+```
+
+This variable occupies only **one** memory location, whether there are 5, 500, or 50,000 loads.
+
+Similarly, the loop variable:
+
+```cpp
+int i;
+```
+
+also uses only one memory location.
+
+These variables do **not** grow with the input size.
+
+> Therefore, they require **O(1)** (constant) space.
+
+---
+
+## Overall Summary
+
+| Metric              | Reason                                       | Result |
+|----------------------|-----------------------------------------------|--------|
+| **Time Complexity**  | The program visits every load exactly once   | `O(n)` |
+| **Space Complexity** | The vector stores all `n` load values        | `O(n)` |
+| **Auxiliary Space**  | Only `total` and `i` are extra variables     | `O(1)` |
+
+---
+
+## What is "O"? (Big-O Notation)
+
+The letter **"O"** stands for **Order** in the mathematical notation called **Big-O Notation**.
+
+Big-O is **not** a unit of time like seconds or milliseconds. Instead, it describes **how the amount of work grows as the input size grows**.
+
+It answers questions like:
+
+> "If the input becomes larger, how much more work will the algorithm perform?"
+
+---
+
+## What is "n"?
+
+The letter **"n"** represents the **input size**. It means different things depending on the problem:
+
+| Problem               | n represents               |
+|------------------------|-----------------------------|
+| Array Program          | Number of array elements   |
+| Linked List            | Number of nodes            |
+| Graph                  | Number of vertices         |
+| String                 | Number of characters       |
+| Beam Load Calculator   | Number of point loads      |
+
+---
+
+## Examples
+
+| n      | Loop executes  |
+|--------|-----------------|
+| 5      | 5 times         |
+| 100    | 100 times       |
+| 10,000 | 10,000 times    |
+
+---
+
+## Why is it Called O(n)?
+
+The algorithm:
+
+```cpp
+for (i = 0; i < n; i++) {
+    total += loads[i];
+}
+```
+
+Every iteration processes exactly one element:
+
+| Elements | Iterations |
+|----------|------------|
+| 5        | 5          |
+| 100      | 100        |
+| 1,000    | 1,000      |
+
+The work grows in direct proportion to `n`.
+
+> **Time Complexity = O(n)**
+
+---
+
+## Simple Meaning of O(n)
+
+> "The running time grows **linearly** with the size of the input."
+
+or
+
+> "If the input doubles, the amount of work approximately doubles."
+
+---
+
+## Common Big-O Values
+
+### O(1) — Constant Time
+- `arr[5]`
+- Reading one variable
+- Pushing to a stack (amortized)
+
+### O(log n) — Logarithmic Time
+- Binary Search
+- Balanced BST Search
+
+### O(n) — Linear Time
+- Array Traversal
+- Finding Maximum
+- Finding Minimum
+- Computing Sum
+- Beam Load Calculator
+
+### O(n log n)
+- Merge Sort
+- Heap Sort
+- Quick Sort (average case)
+
+### O(n²) — Quadratic Time
+- Bubble Sort
+- Selection Sort
+- Insertion Sort (worst case)
+- Comparing every pair of elements
 ---
 
 

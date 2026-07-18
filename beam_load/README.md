@@ -530,20 +530,6 @@ Identify Loads
         ↓
 Compute Total Load   ✅
 ```
-
----
-
-
----
-
-
-```
-
-
-
-
-```
-
 Meaning
 
 The engineer submits the final total load for further structural calculations.
@@ -783,11 +769,6 @@ From a civil engineering perspective, this program models the **first step of st
 
 # Yes. There is Scope for GATE Civil Numerical Questions
 
-Although this C++ program only **adds multiple point loads**, the underlying concept (summation of loads) is frequently used in **Engineering Mechanics** and **Structural Analysis**, which are important GATE Civil subjects.
-
-The program itself does **not** solve a complete GATE problem, but it represents the **first computational step** in many structural calculations.
-
----
 
 # GATE Civil Style Numerical
 
@@ -825,92 +806,10 @@ Total Load
 100 kN
 ```
 
----
-
-# Why this is Relevant?
-
-Before calculating
-
-- Support reactions
-- Shear Force Diagram (SFD)
-- Bending Moment Diagram (BMD)
-
-the engineer first computes
-
-```
-Total External Load
-```
-
-which is exactly what this program automates.
-
----
-
-# Relation to the C++ Program
-
-Suppose the input is
-
-```
-Number of point loads
-
-5
-```
-
-Then
-
-```
-Load 1 = 12
-
-Load 2 = 18
-
-Load 3 = 25
-
-Load 4 = 15
-
-Load 5 = 30
-```
-
-The program computes
-
-```
-Total
-
-=
-
-12
-
-+
-
-18
-
-+
-
-25
-
-+
-
-15
-
-+
-
-30
-
-=
-
-100 kN
-```
-
-and prints
-
-```
-Total Load : 100.00 kN
-```
-
----
-
 # Learning Outcome
 
 This numerical teaches that before any structural analysis is performed, the **resultant external load** on the beam must be known. The C++ program mirrors this engineering task by storing each point load, summing them through iteration, and reporting the total load, which serves as the starting point for further analyses such as support reactions, shear force, and bending moment calculations.
 
 ## Reference
 
-Program and complexity discussion are based on the accompanying Beam Load Calculator source code a
+Program and complexity discussion are based on the accompanying Beam Load Calculator source code .

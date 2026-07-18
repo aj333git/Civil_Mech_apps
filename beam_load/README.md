@@ -767,8 +767,6 @@ This program directly relates to introductory concepts in
 
 From a civil engineering perspective, this program models the **first step of structural load analysis**. It acts like a junior structural engineer who collects all point loads acting on a beam, records them in a load schedule, computes the total applied load, and generates a neat engineering report. While simple, this total load becomes the foundation for later calculations such as support reactions, shear force diagrams, bending moment diagrams, beam design, and serviceability checks.
 
-# Yes. There is Scope for GATE Civil Numerical Questions
-
 
 # GATE Civil Style Numerical
 

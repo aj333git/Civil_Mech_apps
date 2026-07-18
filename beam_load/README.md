@@ -378,6 +378,67 @@ After this project, you should be able to
 - write modular functions
 - analyze algorithm complexity
 - connect DSA concepts with engineering software
+
+
+---
+
+
+
+---
+
+## Question 1: Time and Space Complexity (GATE CSE Style)
+
+**Problem Statement:**
+
+Consider the following C++ function that calculates a cumulative structural summary from an input vector of size `n`:
+
+```cpp
+std::vector<double> computeCumulativeLoads(const std::vector<double>& loads) {
+    int n = loads.size();
+    std::vector<double> cumLoads(n); 
+    double runningSum = 0.0;
+    for (int i = 0; i < n; ++i) {
+        runningSum += loads[i];
+        cumLoads[i] = runningSum;
+    }
+    return cumLoads;
+}
+```
+
+Let `T(n)` be the worst-case time complexity and `S(n)` be the auxiliary space complexity (extra space used excluding the input space). Which of the following is correct?
+
+- **(A)** T(n) = O(n) and S(n) = O(1)
+- **(B)** T(n) = O(n) and S(n) = O(n)
+- **(C)** T(n) = O(n²) and S(n) = O(n)
+- **(D)** T(n) = O(n²) and S(n) = O(1)
+
+---
+
+## Question 2: Dynamic Memory & Vectors (GATE CSE Style)
+
+**Problem Statement:**
+
+A `std::vector` in C++ manages a dynamically allocated contiguous array. When its capacity is full and a new element is added, it reallocates memory by doubling its current capacity and copies the existing elements to the new memory location.
+
+Suppose an empty vector has an initial capacity of `1`. We insert `n` structural loads sequentially using `push_back()`, where `n = 2^k + 1` (for some integer `k ≥ 1`). What is the total number of element copy operations performed during memory reallocations to insert all `n` elements?
+
+- **(A)** n
+- **(B)** 2n - 3
+- **(C)** n log₂n
+- **(D)** n - 2
+
+# Key Takeaways
+
+- Arrays are among the most fundamental data structures in GATE CSE.
+- Engineering calculations often reduce to simple array traversal and aggregation.
+- A single `for` loop that visits each element once has linear time complexity `O(n)`.
+- `std::vector` is the modern C++ replacement for raw arrays in most applications.
+- Understanding this example builds the foundation for more advanced topics such as prefix sums, cumulative loads, shear force diagrams, bending moment calculations, and finite element preprocessing.
+
+---
+
+
+
 # Beam Point Load Calculator Explained from a Civil Engineering Perspective
 
 ---
@@ -849,63 +910,6 @@ Total Load : 100.00 kN
 # Learning Outcome
 
 This numerical teaches that before any structural analysis is performed, the **resultant external load** on the beam must be known. The C++ program mirrors this engineering task by storing each point load, summing them through iteration, and reporting the total load, which serves as the starting point for further analyses such as support reactions, shear force, and bending moment calculations.
-
----
-
-
-
----
-
-## Question 1: Time and Space Complexity (GATE CSE Style)
-
-**Problem Statement:**
-
-Consider the following C++ function that calculates a cumulative structural summary from an input vector of size `n`:
-
-```cpp
-std::vector<double> computeCumulativeLoads(const std::vector<double>& loads) {
-    int n = loads.size();
-    std::vector<double> cumLoads(n); 
-    double runningSum = 0.0;
-    for (int i = 0; i < n; ++i) {
-        runningSum += loads[i];
-        cumLoads[i] = runningSum;
-    }
-    return cumLoads;
-}
-```
-
-Let `T(n)` be the worst-case time complexity and `S(n)` be the auxiliary space complexity (extra space used excluding the input space). Which of the following is correct?
-
-- **(A)** T(n) = O(n) and S(n) = O(1)
-- **(B)** T(n) = O(n) and S(n) = O(n)
-- **(C)** T(n) = O(n²) and S(n) = O(n)
-- **(D)** T(n) = O(n²) and S(n) = O(1)
-
----
-
-## Question 2: Dynamic Memory & Vectors (GATE CSE Style)
-
-**Problem Statement:**
-
-A `std::vector` in C++ manages a dynamically allocated contiguous array. When its capacity is full and a new element is added, it reallocates memory by doubling its current capacity and copies the existing elements to the new memory location.
-
-Suppose an empty vector has an initial capacity of `1`. We insert `n` structural loads sequentially using `push_back()`, where `n = 2^k + 1` (for some integer `k ≥ 1`). What is the total number of element copy operations performed during memory reallocations to insert all `n` elements?
-
-- **(A)** n
-- **(B)** 2n - 3
-- **(C)** n log₂n
-- **(D)** n - 2
-
-# Key Takeaways
-
-- Arrays are among the most fundamental data structures in GATE CSE.
-- Engineering calculations often reduce to simple array traversal and aggregation.
-- A single `for` loop that visits each element once has linear time complexity `O(n)`.
-- `std::vector` is the modern C++ replacement for raw arrays in most applications.
-- Understanding this example builds the foundation for more advanced topics such as prefix sums, cumulative loads, shear force diagrams, bending moment calculations, and finite element preprocessing.
-
----
 
 ## Reference
 

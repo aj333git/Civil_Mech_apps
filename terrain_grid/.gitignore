@@ -1,0 +1,23 @@
+# Built using GCC (g++) on Linux
+
+# Executable
+terrain_grid
+
+# Object files
+*.o
+
+# Build directories
+build/
+bin/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Ignore notes / local files
+cac
+theory
+linkedin_blog_post
+pseudocode
+kernel_api
+linux_kernel_contribution
